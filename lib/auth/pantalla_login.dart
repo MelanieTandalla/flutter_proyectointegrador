@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 
-import 'package:proyecto_integrador_flutter/pantalla_menu.dart';
-import 'package:proyecto_integrador_flutter/pantalla_registro.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla_dashboard.dart';
+import 'package:proyecto_integrador_flutter/auth/pantalla_registro.dart';
 
 class Pantalla_login extends StatefulWidget {
   const Pantalla_login({super.key});

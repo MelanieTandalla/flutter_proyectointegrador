@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:proyecto_integrador_flutter/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 
 void main() {
   runApp(Pantalla_Inicio());
@@ -48,8 +48,8 @@ class StartState extends State<Pantalla_Inicio> {
             decoration: BoxDecoration(
                 color: Color.fromARGB(255, 139, 204, 114),
                 gradient: LinearGradient(colors: [
-                  (Color.fromARGB(255, 209, 56, 189)),
-                  Color.fromARGB(255, 125, 41, 182)
+                  (Color.fromARGB(255, 251, 236, 249)),
+                  Color.fromARGB(255, 182, 97, 41)
                 ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           ),
           Center(

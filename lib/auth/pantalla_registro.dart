@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_new, camel_case_types, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:proyecto_integrador_flutter/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
 
