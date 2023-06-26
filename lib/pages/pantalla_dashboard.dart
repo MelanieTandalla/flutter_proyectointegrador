@@ -2,7 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla.productos.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla_categorias.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages/pantalla_perfil.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla_proveedores.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla_salida.dart';
 
 
 
@@ -17,8 +22,8 @@ class _pantalla_menuState extends State<pantalla_menu> {
    @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        
+      appBar: AppBar( 
+        backgroundColor: Color.fromARGB(99, 3, 1, 1),
       ),
       drawer: Drawer(
         child: ListView(
@@ -28,13 +33,10 @@ class _pantalla_menuState extends State<pantalla_menu> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
                 Image.asset('../assets/logo_menu.png',width: 100,),
                 Text("mkp.aguirre@yavirac.edu.ec")
               ],
             ),
-            
-
             decoration: BoxDecoration(color: Color.fromARGB(255, 246, 184, 113)
             ),
             ),
@@ -52,27 +54,40 @@ class _pantalla_menuState extends State<pantalla_menu> {
               title: Text('Productos'),
               onTap: (){
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) =>Pantalla_login()));
+                    context, MaterialPageRoute(builder: (context) =>Page_products()));
               },
             ),
              ListTile(
               leading: Icon(Icons.assignment_ind_outlined),
               title: Text('Proveedores'),
-          
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_providers()));
+              },
             ),
             ListTile(
               leading: Icon(Icons.category),
               title: Text('Categorias'),
-             
+              onTap: (){
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) =>Page_categories()));
+                },
             ),
             ListTile(
               leading: Icon(Icons.assignment_add ),
               title: Text('Entrada de productos'),
-             
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_input()));
+              },
             ),
             ListTile(
               leading: Icon(Icons.archive_sharp),
               title: Text('Salida de productos'),
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_output()));
+              },
              
             ),
             ListTile(

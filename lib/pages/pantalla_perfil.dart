@@ -10,6 +10,9 @@ class Page_profile extends StatefulWidget {
 class _Page_profileState extends State<Page_profile> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: 
+      Text('HOLA'),
+    );
   }
 }

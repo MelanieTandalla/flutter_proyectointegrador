@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_404.dart';
 import 'package:proyecto_integrador_flutter/pantalla_inicio.dart';
 
 void main() => runApp(MyApp());

@@ -58,7 +58,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 235, 218, 217),
+          color: Color.fromARGB(255, 247, 190, 168),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -68,14 +68,15 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 offset: Offset(15.0, 15.0))
           ],
         ),
-        margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
-        padding: EdgeInsets.only(left: 20, right: 20),
+        margin: EdgeInsets.only(top: 20, left: 45, right: 45, bottom: 40),
+        padding: EdgeInsets.only(left: 60, right: 60),
         child: Form(
           key: _formKey,
           child: ListView(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset('./assets/images/logo2.png'),
+              
               TextFormField(
                 controller: nombre,
                 maxLength: 25,
@@ -88,7 +89,8 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 },
                 onSaved: (value) => _username = value!,
                 decoration: InputDecoration(
-                    hintText: 'Nombre Completo', icon: Icon(Icons.person)),
+                    hintText: 'Nombres', icon: Icon(Icons.person,
+                    color: Colors.black,)),
               ),
               TextFormField(
                 controller: apellido,
@@ -102,13 +104,10 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 },
                 onSaved: (value) => _username = value!,
                 decoration: InputDecoration(
-                    hintText: 'Apellido Completo', icon: Icon(Icons.person)),
+                    hintText: 'Apellidos', icon: Icon(Icons.person)),
               ),
               Divider(),
-              Text(
-                'Genero',
-                style: TextStyle(fontSize: 15),
-              ),
+              
               Row(children: <Widget>[
                 
                 Expanded(
@@ -136,97 +135,8 @@ class _pantalla_registroState extends State<pantalla_registro> {
                     },
                   ),
                 )
-
               ]),
-              Divider(),
-              Text('Estado Civil'),
-              Column(
-                children: [
-
-                  DropdownButtonHideUnderline(
-                    child: DropdownButton2(
-                      hint: Text(
-                        'Seleccionar',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Theme.of(context).hintColor,
-                        ),
-                      ),
-                      items: items
-                          .map((item) => DropdownMenuItem<String>(
-                                value: item,
-                                child: Text(
-                                  item,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ))
-                          .toList(),
-                      value: selectedValue,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedValue = value as String;
-                        });
-                      },
-
-                    ),
-                  ),
-                ],
-              ),
-              Divider(),
-              Text('Tipo de documento'),
-              Column(
-                children: [
-                  
-                  DropdownButtonHideUnderline(
-                    
-                    child: DropdownButton2(
-                      isExpanded: true,
-                      hint: Text(
-                        'Seleccionar',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Theme.of(context).hintColor,
-                        ),
-                      ),
-                      items: tipodocumento
-                          .map((item) => DropdownMenuItem<String>(
-                                value: item,
-                                child: Text(
-                                  item,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ))
-                          .toList(),
-                      value: selectedValue2,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedValue2 = value as String;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              
               //Text('$selectedValue2'),
-              TextFormField(
-                controller: cedula,
-                validator: (value) {
-                  if ((value ?? '').isEmpty) {
-                    return 'Numero de documento requerido';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _cedula = value!,
-                decoration: InputDecoration(
-                    hintText: '$selectedValue2',
-                    icon: Icon(Icons.card_membership)),
-              ),
-              Divider(),
               TextFormField(
                 controller: direccion,
                 validator: (value) {
@@ -275,6 +185,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
               /* SizedBox(
                 height: 50,
               ), */
+              
               TextFormField(
                 controller: password,
                 keyboardType: TextInputType.visiblePassword,
@@ -337,11 +248,11 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 30),
+                margin: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10)),
-                width: 12,
+                    color: Color.fromARGB(255, 37, 243, 33),
+                    borderRadius: BorderRadius.circular(20)),
+                height: 45,
                 child: ElevatedButton(
                     child: Text(
                       'Registrarse',
@@ -354,7 +265,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
                         print(
-                            'Username: $_username,Direccion: $_direccion,Email: $_email, Password: $_password , Telefono: $_telefono, Cedula: $_cedula');
+                            'Username: $_username,Direccion: $_direccion,Email: $_email, Password: $_password , Telefono: $_telefono');
                         Navigator.push(
                             context,
                             MaterialPageRoute(

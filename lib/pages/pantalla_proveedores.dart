@@ -10,6 +10,89 @@ class Page_providers extends StatefulWidget {
 class _Page_providersState extends State<Page_providers> {
   @override
   Widget build(BuildContext context) {
-    return Container();
-  }
-}
+   return Scaffold(
+      appBar: AppBar( 
+        backgroundColor: Color.fromARGB(255, 246, 133, 133),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset('../assets/logo_menu.png',width: 100,),
+                Text("mkp.aguirre@yavirac.edu.ec")
+              ],
+            ),
+            decoration: BoxDecoration(color: Color.fromARGB(255, 246, 184, 113)
+            ),
+            ),
+            
+            ListTile(
+              leading: Icon(Icons.co_present_outlined ),
+              title: Text('Perfil'),
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_profile()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.view_in_ar_sharp ),
+              title: Text('Productos'),
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_products()));
+              },
+            ),
+             ListTile(
+              leading: Icon(Icons.assignment_ind_outlined),
+              title: Text('Proveedores'),
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_providers()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.category),
+              title: Text('Categorias'),
+              onTap: (){
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) =>Page_categories()));
+                },
+            ),
+            ListTile(
+              leading: Icon(Icons.assignment_add ),
+              title: Text('Entrada de productos'),
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_input()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.archive_sharp),
+              title: Text('Salida de productos'),
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Page_output()));
+              },
+             
+            ),
+            ListTile(
+              leading: Icon(Icons.call_received_sharp),
+              title: Text('Cerrar sesion'),
+              onTap: (){
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Pantalla_login()));
+              },
+             
+            ),
+          ],
+        ),
+      ),
+      body: Container(),
+    );
+
+
+}}
