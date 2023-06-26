@@ -57,9 +57,8 @@ class StartState extends State<Pantalla_Inicio> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('images/'),
-                Text("BIENVENIDOS A NUESTRO SISTEMA DE INVENTARIO",
-                style: TextStyle(fontSize: 50,),)
+                Image.asset('../images/LOGO.png'),
+                Text("BIENVENIDOS PRODUCT INVENTORY",style: TextStyle(fontSize: 50,),)
               
               ]
             ),

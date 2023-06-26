@@ -37,7 +37,7 @@ class login extends State<Pantalla_login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('../assets/logo2.png'),
+              Image.asset('../images/LOGO.png'),
               
               TextField(
                 controller: email,

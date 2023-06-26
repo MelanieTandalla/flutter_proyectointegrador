@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla.productos.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages/pantalla_perfil.dart';
@@ -33,8 +33,8 @@ class _pantalla_menuState extends State<pantalla_menu> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset('../assets/logo_menu.png',width: 100,),
-                Text("mkp.aguirre@yavirac.edu.ec")
+                Image.asset('../images/LOGO.png',width: 300,),
+                Text("")
               ],
             ),
             decoration: BoxDecoration(color: Color.fromARGB(255, 246, 184, 113)
@@ -54,7 +54,7 @@ class _pantalla_menuState extends State<pantalla_menu> {
               title: Text('Productos'),
               onTap: (){
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) =>Page_products()));
+                    context, MaterialPageRoute(builder: (context) =>Pantalla_productos()));
               },
             ),
              ListTile(
@@ -70,7 +70,7 @@ class _pantalla_menuState extends State<pantalla_menu> {
               title: Text('Categorias'),
               onTap: (){
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) =>Page_categories()));
+                      context, MaterialPageRoute(builder: (context) =>Pantalla_categorias()));
                 },
             ),
             ListTile(

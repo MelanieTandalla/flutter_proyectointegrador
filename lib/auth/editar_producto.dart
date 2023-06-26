@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/auth/Editar_producto.dart';
 
 
-class Pantalla_categorias extends StatefulWidget {
-  const Pantalla_categorias({super.key});
+class Editar_producto extends StatefulWidget {
+  const Editar_producto({super.key});
 
   @override
-  State<Pantalla_categorias> createState() => categorias();
+  State<Editar_producto> createState() => productos();
 }
 
-class categorias extends State<Pantalla_categorias> {
+class productos extends State<Editar_producto> {
   TextEditingController provider = new TextEditingController();
   TextEditingController name = new TextEditingController();
   TextEditingController category = new TextEditingController();
@@ -41,28 +41,19 @@ class categorias extends State<Pantalla_categorias> {
             children: [
               Image.asset('../images/LOGO.png'),
               
-              TextField(
-                controller: provider,
-                decoration: InputDecoration(hintText: 'Proveedor',  icon:Icon(Icons.person)),
-              ),
-             
-              TextField(
-                controller: name,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Nombre', icon:Icon(Icons.person)),
-              ),
-             
+           
+          
              TextField(
                 controller: category,
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'Nombre categoria', icon:Icon(Icons.person)),
+                decoration: InputDecoration(hintText: 'Actualizar', icon:Icon(Icons.person)),
               ),
              
               
               TextField(
                 controller: price,
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'precio', icon:Icon(Icons.numbers)),
+                decoration: InputDecoration(hintText: 'Precio', icon:Icon(Icons.numbers)),
               ),
               
               
@@ -71,11 +62,23 @@ class categorias extends State<Pantalla_categorias> {
                 obscureText: true,
                 decoration: InputDecoration(hintText: 'Descripcion', icon:Icon(Icons.numbers)),
               ),
+
+              TextField(
+                controller: image,
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Canitdad Disponible', icon:Icon(Icons.image)),
+              ),
              
               TextField(
                 controller: image,
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'imagen', icon:Icon(Icons.numbers)),
+                decoration: InputDecoration(hintText: 'Categoria', icon:Icon(Icons.image)),
+              ),
+
+              TextField(
+                controller: image,
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'imagen', icon:Icon(Icons.image)),
               ),
                
             
@@ -89,7 +92,7 @@ class categorias extends State<Pantalla_categorias> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Pantalla_login()));
+                                builder: (context) => Editar_producto()));
                       },
                     ),
                   )
@@ -102,3 +105,8 @@ class categorias extends State<Pantalla_categorias> {
     );
   }
 }
+
+
+
+
+

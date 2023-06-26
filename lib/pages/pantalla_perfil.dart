@@ -12,7 +12,8 @@ class _Page_profileState extends State<Page_profile> {
   Widget build(BuildContext context) {
     return Container(
       child: 
-      Text('HOLA'),
+      Text('HOLA')
+      
     );
   }
 }

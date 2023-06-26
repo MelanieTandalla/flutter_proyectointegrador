@@ -75,7 +75,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
           child: ListView(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('./assets/images/logo2.png'),
+              Image.asset('../images/LOGO.png'),
               
               TextFormField(
                 controller: nombre,
