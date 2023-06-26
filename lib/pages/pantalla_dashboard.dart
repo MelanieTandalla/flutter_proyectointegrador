@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/pages/pantalla_perfil.dart';
 
 
 
@@ -43,7 +44,7 @@ class _pantalla_menuState extends State<pantalla_menu> {
               title: Text('Perfil'),
               onTap: (){
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) =>Pantalla_login()));
+                    context, MaterialPageRoute(builder: (context) =>Page_profile()));
               },
             ),
             ListTile(
