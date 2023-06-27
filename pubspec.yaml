@@ -31,7 +31,6 @@ dependencies:
   flutter:
     sdk: flutter
   dropdown_button2: ^2.1.4
-  uses-material-design: true
 
 
   # The following adds the Cupertino Icons font to your application.
