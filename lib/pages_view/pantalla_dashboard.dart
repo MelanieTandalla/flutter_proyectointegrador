@@ -1,24 +1,29 @@
+// ignore_for_file: camel_case_types, prefer_const_constructors, sort_child_properties_last
+
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_productos.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_entrada.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_proveedores.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_productos.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
-class Page_output extends StatefulWidget {
-  const Page_output({super.key});
+
+
+class pantalla_menu extends StatefulWidget {
+  const pantalla_menu({super.key});
 
   @override
-  State<Page_output> createState() => _Page_outputState();
+  State<pantalla_menu> createState() => _pantalla_menuState();
 }
 
-class _Page_outputState extends State<Page_output> {
-  @override
+class _pantalla_menuState extends State<pantalla_menu> {
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar( 
-        backgroundColor: Color.fromARGB(255, 246, 133, 133),
+        backgroundColor: Color.fromARGB(99, 3, 1, 1),
       ),
       drawer: Drawer(
         child: ListView(
@@ -97,8 +102,8 @@ class _Page_outputState extends State<Page_output> {
           ],
         ),
       ),
-      body: Container(),
     );
+  }
 
 
-}}
+}

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_integrador_flutter/auth/editar_producto.dart';
+import 'package:proyecto_integrador_flutter/pages_editar/Editar_producto.dart';
 
 
-class Pantalla_productos extends StatefulWidget {
-  const Pantalla_productos({super.key});
+class Editar_producto extends StatefulWidget {
+  const Editar_producto({super.key});
 
   @override
-  State<Pantalla_productos> createState() => productos();
+  State<Editar_producto> createState() => productos();
 }
 
-class productos extends State<Pantalla_productos> {
+class productos extends State<Editar_producto> {
   TextEditingController provider = new TextEditingController();
   TextEditingController name = new TextEditingController();
   TextEditingController category = new TextEditingController();
@@ -46,7 +46,7 @@ class productos extends State<Pantalla_productos> {
              TextField(
                 controller: category,
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'Nombre del producto', icon:Icon(Icons.person)),
+                decoration: InputDecoration(hintText: 'Actualizar', icon:Icon(Icons.person)),
               ),
              
               

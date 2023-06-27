@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_productos.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_entrada.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_salida.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_productos.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 
-class Page_providers extends StatefulWidget {
-  const Page_providers({super.key});
+class Page_output extends StatefulWidget {
+  const Page_output({super.key});
 
   @override
-  State<Page_providers> createState() => _Page_providersState();
+  State<Page_output> createState() => _Page_outputState();
 }
 
-class _Page_providersState extends State<Page_providers> {
+class _Page_outputState extends State<Page_output> {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       appBar: AppBar( 
         backgroundColor: Color.fromARGB(255, 246, 133, 133),
       ),

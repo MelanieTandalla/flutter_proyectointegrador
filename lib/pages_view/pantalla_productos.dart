@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_productos.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_proveedores.dart';
-import 'package:proyecto_integrador_flutter/pages/pantalla_salida.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
-class Page_input extends StatefulWidget {
-  const Page_input({super.key});
+
+class Pantalla_productos extends StatefulWidget {
+  const Pantalla_productos({super.key});
 
   @override
-  State<Page_input> createState() => _Page_inputState();
+  State<Pantalla_productos> createState() => productos();
 }
 
-class _Page_inputState extends State<Page_input> {
+class productos extends State<Pantalla_productos> {
+  TextEditingController provider = new TextEditingController();
+  TextEditingController name = new TextEditingController();
+  TextEditingController category = new TextEditingController();
+  TextEditingController price = new TextEditingController();
+  TextEditingController description = new TextEditingController();
+  TextEditingController cantidad = new TextEditingController();
+  TextEditingController image = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -97,8 +106,14 @@ class _Page_inputState extends State<Page_input> {
           ],
         ),
       ),
-      body: Container(),
-    );
+      body: Container(
+        child: Text('e'),)
+        
+      );
+  }
+}
 
 
-}}
+
+
+

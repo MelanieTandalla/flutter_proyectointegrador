@@ -24,7 +24,7 @@ class StartState extends State<Pantalla_Inicio> {
   }
 
   startTime() async {
-    var duration = Duration(seconds: 8);
+    var duration = Duration(seconds: 1);
     return new Timer(duration, route);
     
   }
