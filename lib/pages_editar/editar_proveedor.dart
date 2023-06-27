@@ -132,6 +132,11 @@ class productos extends State<Editar_Provider> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text('Editar Proveedor',
+              style: TextStyle(
+                fontSize: 30, 
+                color: Color.fromRGBO(86, 84, 84, 0.984)
+              ),),
                        
 
              TextField(

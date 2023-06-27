@@ -103,17 +103,23 @@ class _Page_providersState extends State<Page_providers> {
           ],
         ),
       ),
-      body: Column(
+      body: Container(
+        child: Column(
         children: <Widget>[
+          Text('PROVEEDORES', style: TextStyle(
+            fontSize: 40,
+            color: Color.fromRGBO(86, 84, 84, 0.984),
+          ),),
           Spacer(),
           ElevatedCardExample1(),
           ElevatedCardExample2(),
           ElevatedCardExample3(),
           ElevatedCardExample4(),
+          ElevatedCardExample4(),
           Spacer(),
         ],
       ),
-    );
+    ));
   }
 }
 
@@ -176,14 +182,16 @@ class ElevatedCardExample2 extends StatelessWidget {
               children: <Widget>[
                 TextButton(
                   child: const Text('Editar'),
-                  onPressed: () {/* ... */},
-                ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Editar_Provider()));
+                  },),
                 const SizedBox(width: 8),
-                TextButton(
-                  child: const Text('Eliminar'),
-                  onPressed: () {/* ... */},
-                ),
-                const SizedBox(width: 8),
+                Container(
+                  child: const Dialog(),
+                )
               ],
             ),
           ],
@@ -213,14 +221,16 @@ class ElevatedCardExample3 extends StatelessWidget {
               children: <Widget>[
                 TextButton(
                   child: const Text('Editar'),
-                  onPressed: () {/* ... */},
-                ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Editar_Provider()));
+                  },),
                 const SizedBox(width: 8),
-                TextButton(
-                  child: const Text('Eliminar'),
-                  onPressed: () {/* ... */},
-                ),
-                const SizedBox(width: 8),
+                Container(
+                  child: const Dialog(),
+                )
               ],
             ),
           ],
@@ -250,14 +260,16 @@ class ElevatedCardExample4 extends StatelessWidget {
               children: <Widget>[
                 TextButton(
                   child: const Text('Editar'),
-                  onPressed: () {/* ... */},
-                ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Editar_Provider()));
+                  },),
                 const SizedBox(width: 8),
-                TextButton(
-                  child: const Text('Eliminar'),
-                  onPressed: () {/* ... */},
-                ),
-                const SizedBox(width: 8),
+                Container(
+                  child: const Dialog(),
+                )
               ],
             ),
           ],
@@ -283,15 +295,17 @@ Widget build(BuildContext context) {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               TextButton(
-                child: const Text('Editar'),
-                onPressed: () {/* ... */},
-              ),
+                  child: const Text('Editar'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Editar_Provider()));
+                  },),
               const SizedBox(width: 8),
-              TextButton(
-                child: const Text('Eliminar'),
-                onPressed: () {/* ... */},
-              ),
-              const SizedBox(width: 8),
+              Container(
+                  child: const Dialog(),
+                )
             ],
           ),
         ],
@@ -313,13 +327,14 @@ class Dialog extends StatelessWidget {
           content: const Text('¿Esta seguro que quiere eliminar este producto?'),
           actions: <Widget>[
             TextButton(
-              onPressed: () => Navigator.pop(context, 'Aceptar'),
-              child: const Text('Aceptar'),
+              onPressed: () => Navigator.pop(context, 'Cancelar'),
+              child: const Text('Cancelar', style: TextStyle(color: Color.fromRGBO(68, 68, 68, 1)),),
             ),
             TextButton(
-              onPressed: () => Navigator.pop(context, 'Cancelar'),
-              child: const Text('Cancelar'),
+              onPressed: () => Navigator.pop(context, 'Aceptar'),
+              child: const Text('Aceptar', style: TextStyle(color: Color.fromRGBO(6, 67, 210, 1)),),
             ),
+            
           ],
         ),
       ),
