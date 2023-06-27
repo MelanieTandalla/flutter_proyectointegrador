@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
 import '../pages_view/pantalla_proveedores.dart';
@@ -73,7 +73,7 @@ class _agregar_provedorState extends State<agregar_provedor> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Pantalla_productos()));
+                        builder: (context) => Pantalla_listado()));
               },
             ),
             ListTile(

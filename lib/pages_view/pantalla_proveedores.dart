@@ -3,9 +3,9 @@ import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_a%C3%B1adir_provedor.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_producto.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_proveedor.dart';
-import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 class Page_providers extends StatefulWidget {
@@ -57,7 +57,7 @@ class _Page_providersState extends State<Page_providers> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Pantalla_productos()));
+                        builder: (context) => Pantalla_listado()));
               },
             ),
             ListTile(

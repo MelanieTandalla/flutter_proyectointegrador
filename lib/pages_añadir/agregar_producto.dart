@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
-
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
-import '../pages_view/pantalla_proveedores.dart';
 
-class Editar_provedor extends StatefulWidget {
-  const Editar_provedor({super.key});
+class Agregar_producto extends StatefulWidget {
+  const Agregar_producto({super.key});
 
   @override
-  State<Editar_provedor> createState() => _Editar_provedorState();
+  State<Agregar_producto> createState() => _Agregar_productoState();
 }
 
-class _Editar_provedorState extends State<Editar_provedor> {
+class _Agregar_productoState extends State<Agregar_producto> {
   final phoneNumberRegex = RegExp(r'^\d{3}\d{3}\d{4}$');
   final emailRegex = RegExp(
       r'^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$');
   final _formKey = GlobalKey<FormState>();
   late var obscureText = true;
-  late String _username, _direccion, _telefono;
+  late String _username, _precio, _descripcion, _cantidad, _categoria, _imagen;
 
   TextEditingController nombre = new TextEditingController();
-  TextEditingController telefono = new TextEditingController();
-  TextEditingController direccion = new TextEditingController();
+  TextEditingController precio= new TextEditingController();
+  TextEditingController descripcion = new TextEditingController();
+  TextEditingController cantidad = new TextEditingController();
+  TextEditingController categoria = new TextEditingController();
+  TextEditingController imagen = new TextEditingController();
 
   String? gender;
 
@@ -48,7 +50,11 @@ class _Editar_provedorState extends State<Editar_provedor> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Editar Producto")
+                  Image.asset(
+                    '../images/LOGO.png',
+                    width: 300,
+                  ),
+                  Text("")
                 ],
               ),
               decoration:
@@ -144,50 +150,100 @@ class _Editar_provedorState extends State<Editar_provedor> {
                 keyboardType: TextInputType.name,
                 validator: (value) {
                   if ((value ?? '').isEmpty) {
-                    return 'Nombre de usuario requerido';
+                    return 'Nombre del producto';
                   }
                   return null;
                 },
                 onSaved: (value) => _username = value!,
                 decoration: InputDecoration(
-                    hintText: 'Nombres',
+                    hintText: 'Ingrese el nombre del producto',
                     icon: Icon(
                       Icons.person,
                       color: Colors.black,
                     )),
               ),
               //Text('$selectedValue2'),
+              
+              
               TextFormField(
-                controller: direccion,
+                controller: precio,
+                maxLength: 4,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Ingres el precio del producto';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _precio = value!,
+                decoration: InputDecoration(
+                    hintText: 'Ingrese el precio', icon: Icon(Icons.numbers)),
+              ),
+
+
+
+
+              
+              TextFormField(
+                controller: descripcion,
                 maxLength: 25,
                 validator: (value) {
                   if ((value ?? '').isEmpty) {
-                    return 'Nombre de direccion requerido';
+                    return 'Ingrese la descripcion';
                   }
                   return null;
                 },
-                onSaved: (value) => _direccion = value!,
+                onSaved: (value) => _descripcion = value!,
                 decoration: InputDecoration(
-                    hintText: 'Direccion', icon: Icon(Icons.map)),
-              ),
-              TextFormField(
-                controller: telefono,
-                maxLength: 10,
-                keyboardType: TextInputType.phone,
-                validator: (value) {
-                  if ((value ?? '').isEmpty) {
-                    return 'Numero de telefono requerido';
-                  }
-                  if (!phoneNumberRegex.hasMatch(value!)) {
-                    return 'Ingrese un número de teléfono válido';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _telefono = value!,
-                decoration: InputDecoration(
-                    hintText: 'Telefono', icon: Icon(Icons.phone)),
+                    hintText: 'Ingrese la descripcion del producto', icon: Icon(Icons.description)),
               ),
 
+
+              
+              TextFormField(
+                controller: cantidad,
+                maxLength: 4,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Ingres la cantidad';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _cantidad = value!,
+                decoration: InputDecoration(
+                    hintText: 'Ingrese la cantidad del producto', icon: Icon(Icons.numbers)),
+              ),
+
+
+TextFormField(
+                controller: categoria,
+                
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Categoria que pertenece';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _categoria = value!,
+                decoration: InputDecoration(
+                    hintText: 'Ingrese la categeria', icon: Icon(Icons.numbers)),
+              ),
+
+TextFormField(
+                controller: imagen,
+                
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Ingres la imagen';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _imagen = value!,
+                decoration: InputDecoration(
+                    hintText: 'Ingrese la imagen del producto', icon: Icon(Icons.imagesearch_roller)),
+              ),
+
+
+              
 
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
@@ -202,7 +258,7 @@ class _Editar_provedorState extends State<Editar_provedor> {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
                         print(
-                            'Username: $_username,Direccion: $_direccion, Telefono: $_telefono');
+                            'Username: $_username,Precio: $_precio, Descripcion: $_descripcion, Cantidad: $_cantidad, Categoria: $_categoria, Imagen: $_imagen');
                       }
                     }),
               ),
@@ -223,7 +279,7 @@ class Dialog extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          content: const Text('Provedores registrado con Exito!!'),
+          content: const Text('Producto agregado con exito!!'),
           actions: <Widget>[
             TextButton(
               onPressed: () =>Navigator.push(

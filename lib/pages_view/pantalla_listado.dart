@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_producto.dart';
-import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/agregar_producto.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 class Pantalla_listado extends StatefulWidget {
   const Pantalla_listado({super.key});
@@ -55,7 +56,7 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Pantalla_productos()));
+                        builder: (context) => Pantalla_listado()));
               },
             ),
             ListTile(
@@ -63,7 +64,7 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
               title: Text('Proveedores'),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Pantalla_listado()));
+                    MaterialPageRoute(builder: (context) => Page_providers()));
               },
             ),
             ListTile(
@@ -110,6 +111,14 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
             fontSize: 40,
             color: Color.fromRGBO(86, 84, 84, 0.984),
           ),),
+
+                 OutlinedButton(
+  onPressed: () {
+      Navigator.push(context,
+                    MaterialPageRoute(builder: (context) =>Agregar_producto()));
+  },
+  child: Text("Añadir producto"),
+),
           Spacer(),
           ElevatedCardExample1(),
           ElevatedCardExample2(),
@@ -170,11 +179,12 @@ class ElevatedCardExample2 extends StatelessWidget {
     return Center(
       child: Card(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.min, 
           children: <Widget>[
             const ListTile(
               leading: Icon(Icons.verified_user_outlined),
               title: Text('Refrigeradora'),
+              
               subtitle: Text('Semi-nueva'),
             ),
             Row(

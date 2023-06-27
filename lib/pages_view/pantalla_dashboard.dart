@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
@@ -54,7 +54,7 @@ class _pantalla_menuState extends State<pantalla_menu> {
               title: Text('Productos'),
               onTap: (){
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) =>Pantalla_productos()));
+                    context, MaterialPageRoute(builder: (context) =>Pantalla_listado()));
               },
             ),
              ListTile(
