@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-
-import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
-import '../pages_details/pantalla_proveedores.dart';
+import '../pages_view/pantalla_proveedores.dart';
 
 class agregar_provedor extends StatefulWidget {
   const agregar_provedor({super.key});
@@ -193,6 +192,7 @@ class _agregar_provedorState extends State<agregar_provedor> {
                     hintText: 'Telefono', icon: Icon(Icons.phone)),
               ),
 
+
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
                 decoration: BoxDecoration(
@@ -200,27 +200,52 @@ class _agregar_provedorState extends State<agregar_provedor> {
                     borderRadius: BorderRadius.circular(20)),
                 height: 45,
                 child: ElevatedButton(
-                    child: Text(
-                      'Registrarse',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
+                    child: const Dialog(                      
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
                         print(
                             'Username: $_username,Direccion: $_direccion, Telefono: $_telefono');
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Pantalla_login()));
                       }
                     }),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class Dialog extends StatelessWidget {
+  const Dialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          content: const Text('Provedores registrado con Exito!!'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () =>Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Page_providers())),
+              child: const Text('Aceptar', style: TextStyle(color: Color.fromRGBO(68, 68, 68, 1)),),
+            ),
+            
+          ],
+        ),
+      ),
+      child: const Text(
+        'Agregar',
+        style: TextStyle(
+          fontSize: 15.0,
+          color: Color.fromRGBO(210, 6, 6, 1),
+          fontFamily: 'cursive',
         ),
       ),
     );

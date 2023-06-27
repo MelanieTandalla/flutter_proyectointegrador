@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_a%C3%B1adir_provedor.dart';
+import 'package:proyecto_integrador_flutter/pages_editar/editar_producto.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_proveedor.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
@@ -155,7 +156,7 @@ class ElevatedCardExample1 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_Provider()));
+                            builder: (context) => Editar_provedor()));
                   },
                 ),
                 Container(
@@ -194,7 +195,7 @@ class ElevatedCardExample2 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_Provider()));
+                            builder: (context) => Editar_provedor()));
                   },),
                 const SizedBox(width: 8),
                 Container(
@@ -233,7 +234,7 @@ class ElevatedCardExample3 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_Provider()));
+                            builder: (context) => Editar_provedor()));
                   },),
                 const SizedBox(width: 8),
                 Container(
@@ -272,7 +273,7 @@ class ElevatedCardExample4 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_Provider()));
+                            builder: (context) => Editar_provedor()));
                   },),
                 const SizedBox(width: 8),
                 Container(
@@ -308,7 +309,7 @@ Widget build(BuildContext context) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_Provider()));
+                            builder: (context) => Editar_producto()));
                   },),
               const SizedBox(width: 8),
               Container(

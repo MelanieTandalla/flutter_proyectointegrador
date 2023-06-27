@@ -1,33 +1,40 @@
 import 'package:flutter/material.dart';
+
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
-import '../pages_view/pantalla_categorias.dart';
-import '../pages_view/pantalla_entrada.dart';
 import '../pages_view/pantalla_proveedores.dart';
 
-
-class Editar_Provider extends StatefulWidget {
-  const Editar_Provider({super.key});
+class Editar_provedor extends StatefulWidget {
+  const Editar_provedor({super.key});
 
   @override
-  State<Editar_Provider> createState() => productos();
+  State<Editar_provedor> createState() => _Editar_provedorState();
 }
 
-class productos extends State<Editar_Provider> {
-  TextEditingController provider = new TextEditingController();
-  TextEditingController name = new TextEditingController();
-  TextEditingController category = new TextEditingController();
-  TextEditingController price = new TextEditingController();
-  TextEditingController description = new TextEditingController();
-  TextEditingController cantidad = new TextEditingController();
-  TextEditingController image = new TextEditingController();
+class _Editar_provedorState extends State<Editar_provedor> {
+  final phoneNumberRegex = RegExp(r'^\d{3}\d{3}\d{4}$');
+  final emailRegex = RegExp(
+      r'^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$');
+  final _formKey = GlobalKey<FormState>();
+  late var obscureText = true;
+  late String _username, _direccion, _telefono;
+
+  TextEditingController nombre = new TextEditingController();
+  TextEditingController telefono = new TextEditingController();
+  TextEditingController direccion = new TextEditingController();
+
+  String? gender;
+
+
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
+    return Scaffold(
       backgroundColor: Color.fromRGBO(250, 240, 236, 0.969),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 194, 151, 151),
@@ -41,11 +48,7 @@ class productos extends State<Editar_Provider> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    '../images/LOGO.png',
-                    width: 300,
-                  ),
-                  Text("")
+                  Text("Editar Producto")
                 ],
               ),
               decoration:
@@ -126,67 +129,82 @@ class productos extends State<Editar_Provider> {
                 offset: Offset(15.0, 15.0))
           ],
         ),
-        margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
-        padding: EdgeInsets.only(left: 20, right: 20),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        margin: EdgeInsets.only(top: 20, left: 45, right: 45, bottom: 40),
+        padding: EdgeInsets.only(left: 60, right: 60),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Editar Proveedor',
-              style: TextStyle(
-                fontSize: 30, 
-                color: Color.fromRGBO(86, 84, 84, 0.984)
-              ),),
-                       
+              Image.asset('../images/LOGO.png'),
 
-             TextField(
-                controller: category,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Actualizar Nombre', icon:Icon(Icons.person)),
+              TextFormField(
+                controller: nombre,
+                maxLength: 25,
+                keyboardType: TextInputType.name,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Nombre de usuario requerido';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _username = value!,
+                decoration: InputDecoration(
+                    hintText: 'Nombres',
+                    icon: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    )),
               ),
-             
-              
-              TextField(
-                controller: price,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Actualizar Direccion', icon:Icon(Icons.numbers)),
+              //Text('$selectedValue2'),
+              TextFormField(
+                controller: direccion,
+                maxLength: 25,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Nombre de direccion requerido';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _direccion = value!,
+                decoration: InputDecoration(
+                    hintText: 'Direccion', icon: Icon(Icons.map)),
               ),
-              
-              
-              TextField(
-                controller: description,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Actulizar Telefono', icon:Icon(Icons.numbers)),
+              TextFormField(
+                controller: telefono,
+                maxLength: 10,
+                keyboardType: TextInputType.phone,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Numero de telefono requerido';
+                  }
+                  if (!phoneNumberRegex.hasMatch(value!)) {
+                    return 'Ingrese un número de teléfono válido';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _telefono = value!,
+                decoration: InputDecoration(
+                    hintText: 'Telefono', icon: Icon(Icons.phone)),
               ),
 
-            
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    child: TextButton(
-                      child: Text("Guardar"),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Page_providers()));
-                      },
+
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 37, 243, 33),
+                    borderRadius: BorderRadius.circular(20)),
+                height: 45,
+                child: ElevatedButton(
+                    child: const Dialog(                      
                     ),
-                  ),
-                  Container(
-                    child: TextButton(
-                      
-                      child: Text("Guardar"),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Page_providers()));
-                      },
-                    ),
-                  )
-                ],
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        print(
+                            'Username: $_username,Direccion: $_direccion, Telefono: $_telefono');
+                      }
+                    }),
               ),
             ],
           ),
@@ -196,7 +214,36 @@ class productos extends State<Editar_Provider> {
   }
 }
 
+class Dialog extends StatelessWidget {
+  const Dialog({super.key});
 
-
-
-
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          content: const Text('Provedores registrado con Exito!!'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () =>Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Page_providers())),
+              child: const Text('Aceptar', style: TextStyle(color: Color.fromRGBO(68, 68, 68, 1)),),
+            ),
+            
+          ],
+        ),
+      ),
+      child: const Text(
+        'Agregar',
+        style: TextStyle(
+          fontSize: 15.0,
+          color: Color.fromRGBO(210, 6, 6, 1),
+          fontFamily: 'cursive',
+        ),
+      ),
+    );
+  }
+}
