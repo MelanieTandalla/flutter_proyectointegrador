@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/pages_editar/editar_proveedor.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
+import 'package:proyecto_integrador_flutter/sms/eliminado_proveedor.dart';
 
 class Page_providers extends StatefulWidget {
   const Page_providers({super.key});
@@ -16,13 +18,11 @@ class Page_providers extends StatefulWidget {
 class _Page_providersState extends State<Page_providers> {
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      backgroundColor: Color.fromRGBO(255, 229, 218, 0.969),
+      backgroundColor: Color.fromRGBO(250, 240, 236, 0.969),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 246, 133, 133),
+        backgroundColor: Color.fromARGB(255, 194, 151, 151),
       ),
-      
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -100,37 +100,239 @@ class _Page_providersState extends State<Page_providers> {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Pantalla_login()));
-                    
               },
             ),
-               ],
+          ],
         ),
       ),
-      body: Container(
-        margin: EdgeInsets.only(top: 20, left: 40, right: 40),
-        decoration: BoxDecoration(
-          border: Border.all(),
-          borderRadius: BorderRadius.circular(10)
-        ),
-        child: ListView(
-      children: <Widget>[
-        ListTile(
-          leading: Image.asset('../images/proveedor1.png', width: 40, height: 40,),
-          title: Text('Johan'),
-        ),
-        ListTile(
-          leading: Icon(Icons.photo_album),
-          title: Text('Album'),
-        ),
-        ListTile(
-          leading: Icon(Icons.phone),
-          title: Text('Phone'),
-        ),
-      ],
-    )));
-      
-    
+      body: Column(
+        children: <Widget>[
+          Spacer(),
+          ElevatedCardExample1(),
+          ElevatedCardExample2(),
+          ElevatedCardExample3(),
+          ElevatedCardExample4(),
+          Spacer(),
+        ],
+      ),
+    );
   }
 }
 
+class ElevatedCardExample1 extends StatelessWidget {
+  const ElevatedCardExample1({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.verified_user_outlined),
+              title: Text('Johan Pavon'),
+              subtitle: Text('Direccion: Solanda'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('Editar'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Editar_Provider()));
+                  },
+                ),
+                Container(
+                  child: const Dialog(),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ElevatedCardExample2 extends StatelessWidget {
+  const ElevatedCardExample2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.verified_user_outlined),
+              title: Text('Adonis Mendoza'),
+              subtitle: Text('Direccion: Centro'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('Editar'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+                TextButton(
+                  child: const Text('Eliminar'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ElevatedCardExample3 extends StatelessWidget {
+  const ElevatedCardExample3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.verified_user_outlined),
+              title: Text('Steveen Chizaiza'),
+              subtitle: Text('Direccion: Caupicho'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('Editar'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+                TextButton(
+                  child: const Text('Eliminar'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ElevatedCardExample4 extends StatelessWidget {
+  const ElevatedCardExample4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.verified_user_outlined),
+              title: Text('Melanie Tandalla'),
+              subtitle: Text('Direccion: Centro'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('Editar'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+                TextButton(
+                  child: const Text('Eliminar'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+@override
+Widget build(BuildContext context) {
+  return Center(
+    child: Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const ListTile(
+            leading: Icon(Icons.verified_user_outlined),
+            title: Text('Sebastian Yanez'),
+            subtitle: Text('Direccion: Valle'),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              TextButton(
+                child: const Text('Editar'),
+                onPressed: () {/* ... */},
+              ),
+              const SizedBox(width: 8),
+              TextButton(
+                child: const Text('Eliminar'),
+                onPressed: () {/* ... */},
+              ),
+              const SizedBox(width: 8),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+
+class Dialog extends StatelessWidget {
+  const Dialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          content: const Text('¿Esta seguro que quiere eliminar este producto?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Aceptar'),
+              child: const Text('Aceptar'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancelar'),
+              child: const Text('Cancelar'),
+            ),
+          ],
+        ),
+      ),
+      child: const Text(
+        'Eliminar',
+        style: TextStyle(
+          fontSize: 15.0,
+          color: Color.fromRGBO(210, 6, 6, 1),
+          fontFamily: 'cursive',
+        ),
+      ),
+    );
+  }
+}
