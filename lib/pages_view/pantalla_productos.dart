@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_integrador_flutter/pages_editar/Editar_producto.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
@@ -44,11 +44,12 @@ class productos extends State<Pantalla_productos> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text('Productos', ),
                   Image.asset(
                     '../images/LOGO.png',
                     width: 300,
                   ),
-                  Text("")
+                  
                 ],
               ),
               decoration:
@@ -117,7 +118,7 @@ class productos extends State<Pantalla_productos> {
           ],
         ),
       ),
-      body: Container(
+ body: Container(
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 247, 190, 168),
           borderRadius: BorderRadius.circular(10),
@@ -128,7 +129,6 @@ class productos extends State<Pantalla_productos> {
                 spreadRadius: 5.0,
                 offset: Offset(15.0, 15.0))
           ],
-          
         ),
         margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
         padding: EdgeInsets.only(left: 20, right: 20),
@@ -136,46 +136,48 @@ class productos extends State<Pantalla_productos> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            
-             TextField(
-                decoration: InputDecoration(hintText: 'Lista de Productos'),
-              ),
+              Text('Productos',
+              style: TextStyle(
+                fontSize: 30, 
+                color: Color.fromRGBO(86, 84, 84, 0.984)
+              ),),
+                   
 
             TextField(
-                controller: category,
-                obscureText: true,
+                controller: name,
+                obscureText: false,
                 decoration: InputDecoration(hintText: 'Nombre del producto', icon:Icon(Icons.person)),
               ),
              
               
               TextField(
                 controller: price,
-                obscureText: true,
+                obscureText: false,
                 decoration: InputDecoration(hintText: 'Precio', icon:Icon(Icons.numbers)),
               ),
               
               
               TextField(
                 controller: description,
-                obscureText: true,
+                obscureText: false,
                 decoration: InputDecoration(hintText: 'Descripcion', icon:Icon(Icons.description)),
               ),
 
               TextField(
                 controller: cantidad,
-                obscureText: true,
+                obscureText: false,
                 decoration: InputDecoration(hintText: 'Canitdad Disponible', icon:Icon(Icons.image)),
               ),
              
               TextField(
                 controller: category,
-                obscureText: true,
+                obscureText: false,
                 decoration: InputDecoration(hintText: 'Categoria', icon:Icon(Icons.category)),
               ),  
 
               TextField(
                 controller: image,
-                obscureText: true,
+                obscureText: false,
                 decoration: InputDecoration(hintText: 'imagen', icon:Icon(Icons.image)),
               ),
                
@@ -190,7 +192,7 @@ class productos extends State<Pantalla_productos> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Editar_producto()));
+                                builder: (context) => Pantalla_listado()));
                       },
                     ),
                   )
