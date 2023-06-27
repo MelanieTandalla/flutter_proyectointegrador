@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_productos.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';

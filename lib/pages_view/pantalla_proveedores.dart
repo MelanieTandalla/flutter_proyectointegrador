@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_a%C3%B1adir_provedor.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_proveedor.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_productos.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
@@ -110,6 +111,13 @@ class _Page_providersState extends State<Page_providers> {
             fontSize: 40,
             color: Color.fromRGBO(86, 84, 84, 0.984),
           ),),
+          OutlinedButton(
+  onPressed: () {
+      Navigator.push(context,
+                    MaterialPageRoute(builder: (context) =>agregar_provedor()));
+  },
+  child: Text("Añadir Proveedor"),
+),
           Spacer(),
           ElevatedCardExample1(),
           ElevatedCardExample2(),

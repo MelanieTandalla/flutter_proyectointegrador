@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages_editar/editar_producto.dart';
+import 'package:proyecto_integrador_flutter/pages_editar/editar_proveedor.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-class Pantalla_listado extends StatefulWidget {
-  const Pantalla_listado({super.key});
+class Page_providers extends StatefulWidget {
+  const Page_providers({super.key});
 
   @override
-  State<Pantalla_listado> createState() => _Pantalla_listadoState();
+  State<Page_providers> createState() => _Page_providersState();
 }
 
-class _Pantalla_listadoState extends State<Pantalla_listado> {
+class _Page_providersState extends State<Page_providers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +63,7 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
               title: Text('Proveedores'),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Pantalla_listado()));
+                    MaterialPageRoute(builder: (context) => Page_providers()));
               },
             ),
             ListTile(
@@ -106,10 +106,16 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
       body: Container(
         child: Column(
         children: <Widget>[
-          Text('Listado de Productos', style: TextStyle(
+          Text('PROVEEDORES', style: TextStyle(
             fontSize: 40,
             color: Color.fromRGBO(86, 84, 84, 0.984),
           ),),
+          OutlinedButton(
+  onPressed: () {
+      // Respond to button press
+  },
+  child: Text("Añadir Proveedor"),
+),
           Spacer(),
           ElevatedCardExample1(),
           ElevatedCardExample2(),
@@ -135,8 +141,8 @@ class ElevatedCardExample1 extends StatelessWidget {
           children: <Widget>[
             const ListTile(
               leading: Icon(Icons.verified_user_outlined),
-              title: Text('Refrigeradora'),
-              subtitle: Text('Semi-nueva'),
+              title: Text('Johan Pavon'),
+              subtitle: Text('Direccion: Solanda'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -147,7 +153,7 @@ class ElevatedCardExample1 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_producto()));
+                            builder: (context) => Editar_Provider()));
                   },
                 ),
                 Container(
@@ -174,8 +180,8 @@ class ElevatedCardExample2 extends StatelessWidget {
           children: <Widget>[
             const ListTile(
               leading: Icon(Icons.verified_user_outlined),
-              title: Text('Refrigeradora'),
-              subtitle: Text('Semi-nueva'),
+              title: Text('Adonis Mendoza'),
+              subtitle: Text('Direccion: Centro'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -186,7 +192,7 @@ class ElevatedCardExample2 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_producto()));
+                            builder: (context) => Editar_Provider()));
                   },),
                 const SizedBox(width: 8),
                 Container(
@@ -213,9 +219,8 @@ class ElevatedCardExample3 extends StatelessWidget {
           children: <Widget>[
             const ListTile(
               leading: Icon(Icons.verified_user_outlined),
-              title: Text('Television'),
-              subtitle: Text('Semi-nueva'),
-
+              title: Text('Steveen Chizaiza'),
+              subtitle: Text('Direccion: Caupicho'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -226,7 +231,7 @@ class ElevatedCardExample3 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_producto()));
+                            builder: (context) => Editar_Provider()));
                   },),
                 const SizedBox(width: 8),
                 Container(
@@ -253,8 +258,8 @@ class ElevatedCardExample4 extends StatelessWidget {
           children: <Widget>[
             const ListTile(
               leading: Icon(Icons.verified_user_outlined),
-              title: Text('Refrigeradora'),
-              subtitle: Text('Semi-nueva'),
+              title: Text('Melanie Tandalla'),
+              subtitle: Text('Direccion: Centro'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -265,7 +270,7 @@ class ElevatedCardExample4 extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_producto()));
+                            builder: (context) => Editar_Provider()));
                   },),
                 const SizedBox(width: 8),
                 Container(
@@ -289,8 +294,8 @@ Widget build(BuildContext context) {
         children: <Widget>[
           const ListTile(
             leading: Icon(Icons.verified_user_outlined),
-            title: Text('Refrigeradora'),
-              subtitle: Text('Semi-nueva'),
+            title: Text('Sebastian Yanez'),
+            subtitle: Text('Direccion: Valle'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -301,7 +306,7 @@ Widget build(BuildContext context) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_producto()));
+                            builder: (context) => Editar_Provider()));
                   },),
               const SizedBox(width: 8),
               Container(

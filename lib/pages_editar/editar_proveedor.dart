@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_productos.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_productos.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
 import '../pages_view/pantalla_categorias.dart';
@@ -165,6 +165,18 @@ class productos extends State<Editar_Provider> {
                 children: [
                   Container(
                     child: TextButton(
+                      child: Text("Guardar"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Page_providers()));
+                      },
+                    ),
+                  ),
+                  Container(
+                    child: TextButton(
+                      
                       child: Text("Guardar"),
                       onPressed: () {
                         Navigator.push(
