@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_dashboard.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_registro.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 
 class Pantalla_login extends StatefulWidget {
   const Pantalla_login({super.key});
@@ -69,7 +69,7 @@ class login extends State<Pantalla_login> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => pantalla_menu()));
+                              builder: (context) => Pantalla_listado()));
                     }),
               ),
               SizedBox(

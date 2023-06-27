@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
 
-class Page_output extends StatefulWidget {
-  const Page_output({super.key});
+import '../pages_view/pantalla_categorias.dart';
+import '../pages_view/pantalla_entrada.dart';
+import '../pages_view/pantalla_proveedores.dart';
+
+
+class Editar_categoria extends StatefulWidget {
+  const Editar_categoria({super.key});
 
   @override
-  State<Page_output> createState() => _Page_outputState();
+  State<Editar_categoria> createState() => productos();
 }
 
-class _Page_outputState extends State<Page_output> {
+class productos extends State<Editar_categoria> {
   TextEditingController provider = new TextEditingController();
   TextEditingController name = new TextEditingController();
   TextEditingController category = new TextEditingController();
-  //TextEditingController price = new TextEditingController();
+  TextEditingController price = new TextEditingController();
   TextEditingController description = new TextEditingController();
   TextEditingController cantidad = new TextEditingController();
-  //TextEditingController image = new TextEditingController();
+  TextEditingController image = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+  return Scaffold(
       backgroundColor: Color.fromRGBO(250, 240, 236, 0.969),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 194, 151, 151),
@@ -38,13 +41,11 @@ class _Page_outputState extends State<Page_output> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Salida de Productos',
-                  ),
                   Image.asset(
                     '../images/LOGO.png',
                     width: 300,
                   ),
+                  Text("")
                 ],
               ),
               decoration:
@@ -131,40 +132,65 @@ class _Page_outputState extends State<Page_output> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Salida de Productos',
-                style: TextStyle(
-                    fontSize: 30, color: Color.fromRGBO(86, 84, 84, 0.984)),
-              ),
-              TextField(
+              Text('Editar Producto',
+              style: TextStyle(
+                fontSize: 30, 
+                color: Color.fromRGBO(86, 84, 84, 0.984)
+              ),),
+                       
+
+             TextField(
                 controller: name,
-                obscureText: false,
-                decoration: InputDecoration(
-                    hintText: 'Nombre del producto', icon: Icon(Icons.person)),
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Actualizar Nombre Del Producto', icon:Icon(Icons.person)),
               ),
+             
+              
+              TextField(
+                controller: price,
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Actualizar Precio', icon:Icon(Icons.numbers)),
+              ),
+              
               TextField(
                 controller: description,
-                obscureText: false,
-                decoration: InputDecoration(
-                    hintText: 'Descripcion', icon: Icon(Icons.description)),
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Actualizar Descripcion', icon:Icon(Icons.description)),
               ),
+              
+              
               TextField(
-                controller: cantidad,
-                obscureText: false,
-                decoration: InputDecoration(
-                    hintText: 'Canitdad Disponible', icon: Icon(Icons.image)),
+                controller: price,
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Actualizar la cantidad disponible', icon:Icon(Icons.numbers)),
               ),
+
               TextField(
                 controller: category,
-                obscureText: false,
-                decoration: InputDecoration(
-                    hintText: 'Categoria', icon: Icon(Icons.category)),
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Actualizar la categoria', icon:Icon(Icons.category)),
               ),
+
+              TextField(
+                controller: image,
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Cambiar la imagen', icon:Icon(Icons.image)),
+              ),
+
+            
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    
+                    child: ElevatedButton(
+                      child: Text("Guardar"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Pantalla_listado()));
+                      },
+                    ),
                   )
                 ],
               ),
@@ -175,3 +201,8 @@ class _Page_outputState extends State<Page_output> {
     );
   }
 }
+
+
+
+
+
