@@ -48,7 +48,11 @@ class _Editar_provedorState extends State<Editar_provedor> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Editar Producto")
+                  Image.asset(
+                    '../images/LOGO.png',
+                    width: 300,
+                  ),
+                  Text("")
                 ],
               ),
               decoration:
@@ -136,7 +140,13 @@ class _Editar_provedorState extends State<Editar_provedor> {
           child: ListView(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('../images/LOGO.png'),
+              Text(
+                'Editar Provedores',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Color.fromRGBO(4, 5, 4, 0)
+                ),
+              ),
 
               TextFormField(
                 controller: nombre,
@@ -150,7 +160,7 @@ class _Editar_provedorState extends State<Editar_provedor> {
                 },
                 onSaved: (value) => _username = value!,
                 decoration: InputDecoration(
-                    hintText: 'Nombres',
+                    hintText: 'Nombre Actualizado',
                     icon: Icon(
                       Icons.person,
                       color: Colors.black,
@@ -168,7 +178,7 @@ class _Editar_provedorState extends State<Editar_provedor> {
                 },
                 onSaved: (value) => _direccion = value!,
                 decoration: InputDecoration(
-                    hintText: 'Direccion', icon: Icon(Icons.map)),
+                    hintText: 'Direccion Actualizado', icon: Icon(Icons.map)),
               ),
               TextFormField(
                 controller: telefono,
@@ -223,7 +233,7 @@ class Dialog extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          content: const Text('Provedores registrado con Exito!!'),
+          content: const Text('Provedores actualizado con Exito!!'),
           actions: <Widget>[
             TextButton(
               onPressed: () =>Navigator.push(
@@ -237,7 +247,7 @@ class Dialog extends StatelessWidget {
         ),
       ),
       child: const Text(
-        'Agregar',
+        'Actualizar',
         style: TextStyle(
           fontSize: 15.0,
           color: Color.fromRGBO(210, 6, 6, 1),
