@@ -6,8 +6,6 @@ import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart'
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/sms/eliminado_proveedor.dart';
-
 class Page_providers extends StatefulWidget {
   const Page_providers({super.key});
 

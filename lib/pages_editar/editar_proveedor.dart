@@ -132,10 +132,8 @@ class productos extends State<Editar_Provider> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('../images/LOGO.png'),
-              
-           
-          
+                       
+
              TextField(
                 controller: category,
                 obscureText: true,

@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 
 
 class pantalla_registro extends StatefulWidget {
@@ -22,7 +21,6 @@ class _pantalla_registroState extends State<pantalla_registro> {
       _direccion,
       _email,
       _password,
-      _cedula,
       _telefono,
       // ignore: unused_field
       _password2;

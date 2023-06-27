@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_integrador_flutter/pages_editar/Editar_producto.dart';
 
 
 class Editar_producto extends StatefulWidget {
