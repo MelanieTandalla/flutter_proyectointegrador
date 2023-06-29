@@ -71,10 +71,17 @@ class _pantalla_registroState extends State<pantalla_registro> {
         child: Form(
           key: _formKey,
           child: ListView(
-            // mainAxisAlignment: MainAxisAlignment.center,
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('../images/LOGO.png'),
-              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('../images/LOGO.png', height: 50,),
+                  Container(
+                    child: Text('"Registro"', style: TextStyle(fontSize: 50, color: Color.fromARGB(255, 163, 106, 40)),)
+                  )
+                ],
+              ),
               TextFormField(
                 controller: nombre,
                 maxLength: 25,
@@ -89,23 +96,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 decoration: InputDecoration(
                     hintText: 'Nombres', icon: Icon(Icons.person,
                     color: Colors.black,)),
-              ),
-              TextFormField(
-                controller: apellido,
-                maxLength: 25,
-                keyboardType: TextInputType.name,
-                validator: (value) {
-                  if ((value ?? '').isEmpty) {
-                    return 'Apellido de usuario requerido';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _username = value!,
-                decoration: InputDecoration(
-                    hintText: 'Apellidos', icon: Icon(Icons.person)),
-              ),
-              Divider(),
-              
+              ),              
               Row(children: <Widget>[
                 
                 Expanded(
@@ -178,7 +169,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 },
                 onSaved: (value) => _email = value!,
                 decoration: InputDecoration(
-                    hintText: 'correo', icon: Icon(Icons.email)),
+                    hintText: 'Correo', icon: Icon(Icons.email)),
               ),
               /* SizedBox(
                 height: 50,
@@ -208,7 +199,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 },
                 onSaved: (value) => _password = value!,
                 decoration: InputDecoration(
-                  hintText: 'contraseña',
+                  hintText: 'Contraseña',
                   icon: Icon(Icons.password),
                   suffixIcon: IconButton(
                       icon: Icon(Icons.visibility),
@@ -234,7 +225,7 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 },
                 onSaved: (value) => _password = value!,
                 decoration: InputDecoration(
-                  hintText: 'repetir contraseña',
+                  hintText: 'Repetir contraseña',
                   icon: Icon(Icons.password),
                   suffixIcon: IconButton(
                       icon: Icon(Icons.visibility),
@@ -246,11 +237,12 @@ class _pantalla_registroState extends State<pantalla_registro> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
+                margin:EdgeInsets.only(left: 275, top: 25, right: 275),
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 37, 243, 33),
-                    borderRadius: BorderRadius.circular(20)),
-                height: 45,
+                    borderRadius: BorderRadius.circular(40)),
+                height: 35,
+                width: 100,
                 child: ElevatedButton(
                     child: Text(
                       'Registrarse',
@@ -277,10 +269,10 @@ class _pantalla_registroState extends State<pantalla_registro> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Tienes Cuenta"),
+                  Text("Tienes Cuenta?", style: TextStyle(fontSize: 15),),
                   Container(
                     child: TextButton(
-                      child: Text("Iniciar Sesion"),
+                      child: Text("Iniciar Sesion", style: TextStyle(fontSize: 15),),
                       onPressed: () {
                         Navigator.push(
                             context,

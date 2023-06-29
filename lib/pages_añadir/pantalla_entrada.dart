@@ -5,9 +5,7 @@ import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart'
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/pages_view/BarcodeScanPage.dart';
-
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_salida.dart';
 class Page_input extends StatefulWidget {
   const Page_input({super.key});
 
@@ -37,13 +35,6 @@ class _Page_inputState extends State<Page_input> {
                   fit: BoxFit.contain,
                   height: 50,
               ),
-              
-              Container(
-                width: 600,
-              ),
-              
-              
-              
             ],
 
           ),

@@ -4,11 +4,10 @@ import 'package:proyecto_integrador_flutter/pages_editar/editar_producto.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/agregar_producto.dart';
 import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/pages_view/BarcodeScanPage.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_salida.dart';
 class Pantalla_listado extends StatefulWidget {
   const Pantalla_listado({super.key});
 
@@ -30,11 +29,6 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
                   fit: BoxFit.contain,
                   height: 50,
               ),
-              Container(
-                width: 600,
-              ),
-              
-              
             ],
 
           ),

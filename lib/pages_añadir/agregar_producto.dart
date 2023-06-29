@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_salida.dart';
 
 
 class Agregar_producto extends StatefulWidget {
@@ -46,16 +46,8 @@ class _Agregar_productoState extends State<Agregar_producto> {
                  '../images/LOGO.png',
                   fit: BoxFit.contain,
                   height: 50,
-              ),
-              Container(
-                width: 600,
-              ),
-              Container(
-                child: Text('lola'),
-              )
-              
+              ),              
             ],
-
           ),
   ),
       drawer: Drawer(

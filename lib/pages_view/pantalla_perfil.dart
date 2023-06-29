@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/pages_view/BarcodeScanPage.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_salida.dart';
 
 class Page_profile extends StatefulWidget {
   const Page_profile({super.key});
@@ -28,12 +27,7 @@ class _Page_profileState extends State<Page_profile> {
                  '../images/LOGO.png',
                   fit: BoxFit.contain,
                   height: 50,
-              ),
-              Container(
-                width: 600,
-              ),
-              
-              
+              ), 
             ],
 
           ),

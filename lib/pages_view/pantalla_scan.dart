@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
@@ -8,29 +7,20 @@ import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_salida.dart';
 
-class pantalla_menu extends StatefulWidget {
-  const pantalla_menu({super.key});
+class Scaner extends StatefulWidget {
+  const Scaner({super.key});
 
   @override
-  State<pantalla_menu> createState() => _pantalla_menuState();
+  State<Scaner> createState() => _ScanerState();
 }
 
-class _pantalla_menuState extends State<pantalla_menu> {
+class _ScanerState extends State<Scaner> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(250, 240, 236, 0.969),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 194, 151, 151),
-        title: Row(
-          children: [
-            Image.asset(
-              '../images/LOGO.png',
-              fit: BoxFit.contain,
-              height: 50,
-            ),
-          ],
-        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -41,11 +31,13 @@ class _pantalla_menuState extends State<pantalla_menu> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    '',
+                  ),
                   Image.asset(
                     '../images/LOGO.png',
                     width: 300,
                   ),
-                  Text("")
                 ],
               ),
               decoration:
@@ -102,17 +94,7 @@ class _pantalla_menuState extends State<pantalla_menu> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Page_output()));
               },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.qr_code_scanner_outlined,
-              ),
-              title: Text('Scan'),
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => HomePage()));
-              },
-            ),       
+            ),          
             ListTile(
               leading: Icon(Icons.call_received_sharp),
               title: Text('Cerrar sesion'),
@@ -124,19 +106,6 @@ class _pantalla_menuState extends State<pantalla_menu> {
           ],
         ),
       ),
-      body:  Container(
-          margin: EdgeInsets.only(top: 20, left: 150),
-          child: Column(
-            children: <Widget>[
-              Text(
-                'Bienvenidos A nuestro "Product Inventory"',
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Color.fromRGBO(216, 103, 103, 0.98),
-                ),
-              ),
-              Container(
-                child: Image.network('https://media.giphy.com/media/20NHiDnH41d9Ls6NlU/giphy.gif'),
-              )])));
+    );
   }
 }

@@ -5,11 +5,10 @@ import 'package:proyecto_integrador_flutter/pages_editar/editar_producto.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_proveedor.dart';
 import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/pages_view/BarcodeScanPage.dart';
+import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_salida.dart';
 
 class Page_providers extends StatefulWidget {
   const Page_providers({super.key});
@@ -31,11 +30,7 @@ class _Page_providersState extends State<Page_providers> {
                  '../images/LOGO.png',
                   fit: BoxFit.contain,
                   height: 50,
-              ),
-              Container(
-                width: 600,
-              ),
-                         
+              ), 
             ],
           ),
         ),
@@ -177,11 +172,19 @@ class ElevatedCardExample1 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Johan Pavon'),
-              subtitle: Text('Direccion: Solanda'),
+             ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/proveedor1.png'),
             ),
+            title: Text('Adonis Mendoza'),
+            subtitle: Text('Centro'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -216,11 +219,19 @@ class ElevatedCardExample2 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Adonis Mendoza'),
-              subtitle: Text('Direccion: Centro'),
+            ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/proveedor1.png'),
             ),
+            title: Text('Adonis Mendoza'),
+            subtitle: Text('Centro'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -256,11 +267,19 @@ class ElevatedCardExample3 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Steveen Chizaiza'),
-              subtitle: Text('Direccion: Caupicho'),
+            ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/proveedor1.png'),
             ),
+            title: Text('Adonis Mendoza'),
+            subtitle: Text('Centro'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -296,11 +315,19 @@ class ElevatedCardExample4 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Melanie Tandalla'),
-              subtitle: Text('Direccion: Centro'),
+            ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/proveedor1.png'),
             ),
+            title: Text('Adonis Mendoza'),
+            subtitle: Text('Centro'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -333,10 +360,18 @@ Widget build(BuildContext context) {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const ListTile(
-            leading: Icon(Icons.verified_user_outlined),
-            title: Text('Sebastian Yanez'),
-            subtitle: Text('Direccion: Valle'),
+          ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/proveedor1.png'),
+            ),
+            title: Text('Adonis Mendoza'),
+            subtitle: Text('Centro'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
