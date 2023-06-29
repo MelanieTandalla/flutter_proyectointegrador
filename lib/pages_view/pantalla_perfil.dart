@@ -87,22 +87,7 @@ class _Page_profileState extends State<Page_profile> {
                         builder: (context) => Pantalla_categorias()));
               },
             ),
-            ListTile(
-              leading: Icon(Icons.assignment_add),
-              title: Text('Entrada de productos'),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Page_input()));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.archive_sharp),
-              title: Text('Salida de productos'),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Page_output()));
-              },
-            ),   
+            
             ListTile(
               leading: Icon(
                 Icons.qr_code_scanner_outlined,
