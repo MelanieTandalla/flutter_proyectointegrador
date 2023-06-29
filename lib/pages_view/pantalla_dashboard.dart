@@ -22,9 +22,27 @@ class _pantalla_menuState extends State<pantalla_menu> {
    @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
-        backgroundColor: Color.fromARGB(99, 3, 1, 1),
-      ),
+      backgroundColor: Color.fromRGBO(250, 240, 236, 0.969),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 194, 151, 151),
+          title: Row(
+              children: [
+                Image.asset(
+                 '../images/LOGO.png',
+                  fit: BoxFit.contain,
+                  height: 50,
+              ),
+              Container(
+                width: 600,
+              ),
+              Container(
+                child: Text('lola'),
+              )
+              
+            ],
+
+          ),
+  ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
