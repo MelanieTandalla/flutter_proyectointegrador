@@ -126,7 +126,7 @@ class productos extends State<Editar_categoria> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Editar Producto',
+              Text('Editar Categoria',
               style: TextStyle(
                 fontSize: 30, 
                 color: Color.fromRGBO(86, 84, 84, 0.984)
