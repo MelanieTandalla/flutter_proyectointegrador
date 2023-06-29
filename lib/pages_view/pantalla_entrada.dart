@@ -97,7 +97,13 @@ class _Page_inputState extends State<Page_input> {
           ],
         ),
       ),
-      body: Container(),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255,247, 190, 168),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: []
+        ),
+      ),
     );
 
 
