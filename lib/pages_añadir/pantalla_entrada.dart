@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
-import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_salida.dart';
+
+import '../pages_view/pantalla_proveedores.dart';
+
 class Page_input extends StatefulWidget {
   const Page_input({super.key});
 
@@ -13,15 +15,21 @@ class Page_input extends StatefulWidget {
   State<Page_input> createState() => _Page_inputState();
 }
 
-
 class _Page_inputState extends State<Page_input> {
-  TextEditingController provider = new TextEditingController();
-  TextEditingController name = new TextEditingController();
-  TextEditingController category = new TextEditingController();
-  //TextEditingController price = new TextEditingController();
-  TextEditingController description = new TextEditingController();
-  TextEditingController cantidad = new TextEditingController();
-  //TextEditingController image = new TextEditingController();
+  final phoneNumberRegex = RegExp(r'^\d{3}$');
+  final _formKey = GlobalKey<FormState>();
+  late var obscureText = true;
+  late String _username, _provedor, _categoria, _descripcion, _precio, _cantidad;
+
+  TextEditingController nombre = new TextEditingController();
+  TextEditingController precio = new TextEditingController();
+  TextEditingController descripcion = new TextEditingController();
+    TextEditingController categoria = new TextEditingController();
+  TextEditingController provedor = new TextEditingController();
+    TextEditingController cantidad = new TextEditingController();
+
+  String? gender;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +37,14 @@ class _Page_inputState extends State<Page_input> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 194, 151, 151),
         title: Row(
-              children: [
-                Image.asset(
-                 '../images/LOGO.png',
-                  fit: BoxFit.contain,
-                  height: 50,
-              ),
-            ],
-
-          ),
+          children: [
+            Image.asset(
+              '../images/LOGO.png',
+              fit: BoxFit.contain,
+              height: 50,
+            ),
+          ],
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -48,13 +55,11 @@ class _Page_inputState extends State<Page_input> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    '',
-                  ),
                   Image.asset(
                     '../images/LOGO.png',
                     width: 300,
                   ),
+                  Text("")
                 ],
               ),
               decoration:
@@ -111,17 +116,7 @@ class _Page_inputState extends State<Page_input> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Page_output()));
               },
-            ),     
-            ListTile(
-              leading: Icon(
-                Icons.qr_code_scanner_outlined,
-              ),
-              title: Text('Scan'),
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => HomePage()));
-              },
-            ),      
+            ),
             ListTile(
               leading: Icon(Icons.call_received_sharp),
               title: Text('Cerrar sesion'),
@@ -134,42 +129,176 @@ class _Page_inputState extends State<Page_input> {
         ),
       ),
       body: Container(
-        child: Column(
-          children: <Widget>[
-            Text(
-              'Entrada de Prodcutos',
-             style: TextStyle(
-                  fontSize: 40,
-                  color: Color.fromRGBO(86, 84, 84, 0.984),
-                ),
-            ),
-            TextField(
-              controller: name,
-              obscureText: false,
-              decoration: InputDecoration(
-                hintText: 'Nombre del producto', icon: Icon(Icons.person)),
-            ),TextField(
-                controller: description,
-                obscureText: false,
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 247, 190, 168),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black38,
+                blurRadius: 25.0,
+                spreadRadius: 5.0,
+                offset: Offset(15.0, 15.0))
+          ],
+        ),
+        margin: EdgeInsets.only(top: 20, left: 45, right: 45, bottom: 40),
+        padding: EdgeInsets.only(left: 60, right: 60),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('../images/LOGO.png'),
+
+              TextFormField(
+                controller: nombre,
+                maxLength: 25,
+                keyboardType: TextInputType.name,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Nombre del Producto';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _username = value!,
                 decoration: InputDecoration(
-                    hintText: 'Descripcion', icon: Icon(Icons.description)),
+                    hintText: 'Nombre del Producto',
+                    icon: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    )),
               ),
-              TextField(
+              //Text('$selectedValue2'),
+              TextFormField(
+                controller: provedor,
+                maxLength: 25,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Nombre del proveedor';
+                  }
+                  return null;
+                },
+                
+                onSaved: (value) => _provedor = value!,
+                decoration: InputDecoration(
+                    hintText: 'Nombre del proveedor', icon: Icon(Icons.map)),
+              ),
+              TextFormField(
+                controller: descripcion,
+                maxLength: 25,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Descripcion';
+                  }
+                  return null;
+                },
+                
+                onSaved: (value) => _descripcion = value!,
+                decoration: InputDecoration(
+                    hintText: 'Descripcion', icon: Icon(Icons.map)),
+              ),
+              TextFormField(
+                controller: categoria,
+                maxLength: 10,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Categoria';
+                  }
+                  return null;
+                },
+                
+                onSaved: (value) => _categoria = value!,
+                decoration: InputDecoration(
+                    hintText: 'Categoria', icon: Icon(Icons.map)),
+              ),
+              TextFormField(
                 controller: cantidad,
-                obscureText: false,
+                maxLength: 3,
+                keyboardType: TextInputType.phone,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Cantidad requerido';
+                  }
+                  if (!phoneNumberRegex.hasMatch(value!)) {
+                    return 'Ingrese una Cantidad válido';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _categoria = value!,
                 decoration: InputDecoration(
-                    hintText: 'Cantidad Disponible', icon: Icon(Icons.image)),
+                    hintText: 'Cantidad', icon: Icon(Icons.map)),
               ),
-              TextField(
-                controller: category,
-                obscureText: false,
+              TextFormField(
+                controller: precio,
+                maxLength: 3,
+                keyboardType: TextInputType.phone,
+                validator: (value) {
+                  if ((value ?? '').isEmpty) {
+                    return 'Precio requerido';
+                  }
+                  if (!phoneNumberRegex.hasMatch(value!)) {
+                    return 'Ingrese una Precio válido';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _precio = value!,
                 decoration: InputDecoration(
-                    hintText: 'Categoria', icon: Icon(Icons.category)),
-              ),           
-          ],                        
-        ),      
-      ),    
-    ); 
+                    hintText: 'Precio', icon: Icon(Icons.price_change)),
+              ),
+
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 37, 243, 33),
+                    borderRadius: BorderRadius.circular(20)),
+                height: 45,
+                child: ElevatedButton(
+                    child: const Dialog(),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        print(
+                            'Username: $_username, Descripcio: $_descripcion, Categoria: $_categoria, Provedor: $_provedor, Precio: $_precio, Cantidad: $_cantidad');
+                      }
+                    }),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 
+class Dialog extends StatelessWidget {
+  const Dialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          content: const Text('Detalle de la entrada registrado con Exito!!'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Page_input())),
+              child: const Text(
+                'Aceptar',
+                style: TextStyle(color: Color.fromRGBO(68, 68, 68, 1)),
+              ),
+            ),
+          ],
+        ),
+      ),
+      child: const Text(
+        'Agregar',
+        style: TextStyle(
+          fontSize: 15.0,
+          color: Color.fromRGBO(210, 6, 6, 1),
+          fontFamily: 'cursive',
+        ),
+      ),
+    );
+  }
+}

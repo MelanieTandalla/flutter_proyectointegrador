@@ -155,12 +155,7 @@ class productos extends State<Editar_categoria> {
                 decoration: InputDecoration(hintText: 'Actualizar Nombre Del Producto', icon:Icon(Icons.person)),
               ),
              
-              
-              TextField(
-                controller: price,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Actualizar Precio', icon:Icon(Icons.numbers)),
-              ),
+          
               
               TextField(
                 controller: description,
@@ -168,18 +163,6 @@ class productos extends State<Editar_categoria> {
                 decoration: InputDecoration(hintText: 'Actualizar Descripcion', icon:Icon(Icons.description)),
               ),
               
-              
-              TextField(
-                controller: price,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Actualizar la cantidad disponible', icon:Icon(Icons.numbers)),
-              ),
-
-              TextField(
-                controller: category,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Actualizar la categoria', icon:Icon(Icons.category)),
-              ),
 
               TextField(
                 controller: image,
