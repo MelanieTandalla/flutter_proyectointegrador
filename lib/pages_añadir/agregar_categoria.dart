@@ -107,22 +107,7 @@ class _Agregar_categoriaState extends State<Agregar_categoria> {
                         builder: (context) => Pantalla_categorias()));
               },
             ),
-            ListTile(
-              leading: Icon(Icons.assignment_add),
-              title: Text('Entrada de productos'),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Page_input()));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.archive_sharp),
-              title: Text('Salida de productos'),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Page_output()));
-              },
-            ),
+            
             ListTile(
               leading: Icon(Icons.call_received_sharp),
               title: Text('Cerrar sesion'),
@@ -240,13 +225,13 @@ class Dialog extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          content: const Text('Producto agregado con exito!!'),
+          content: const Text('Categoria agregada con exito!!'),
           actions: <Widget>[
             TextButton(
               onPressed: () =>Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Page_providers())),
+                        builder: (context) => Pantalla_categorias())),
               child: const Text('Aceptar', style: TextStyle(color: Color.fromRGBO(68, 68, 68, 1)),),
             ),
             
