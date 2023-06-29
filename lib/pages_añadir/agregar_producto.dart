@@ -21,7 +21,7 @@ class _Agregar_productoState extends State<Agregar_producto> {
       r'^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$');
   final _formKey = GlobalKey<FormState>();
   late var obscureText = true;
-  late String _username, _precio, _descripcion, _cantidad, _categoria, _imagen;
+  late String _producto, _precio, _descripcion, _cantidad, _categoria, _imagen;
 
   TextEditingController nombre = new TextEditingController();
   TextEditingController precio= new TextEditingController();
@@ -163,7 +163,7 @@ class _Agregar_productoState extends State<Agregar_producto> {
                   }
                   return null;
                 },
-                onSaved: (value) => _username = value!,
+                onSaved: (value) => _producto = value!,
                 decoration: InputDecoration(
                     hintText: 'Ingrese el nombre del producto',
                     icon: Icon(
@@ -267,7 +267,7 @@ TextFormField(
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
                         print(
-                            'Username: $_username,Precio: $_precio, Descripcion: $_descripcion, Cantidad: $_cantidad, Categoria: $_categoria, Imagen: $_imagen');
+                            'producto: $_producto,Precio: $_precio, Descripcion: $_descripcion, Cantidad: $_cantidad, Categoria: $_categoria, Imagen: $_imagen');
                       }
                     }),
               ),
@@ -294,7 +294,7 @@ class Dialog extends StatelessWidget {
               onPressed: () =>Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Page_providers())),
+                        builder: (context) => Pantalla_listado())),
               child: const Text('Aceptar', style: TextStyle(color: Color.fromRGBO(68, 68, 68, 1)),),
             ),
             

@@ -22,7 +22,7 @@ class _agregar_provedorState extends State<agregar_provedor> {
       r'^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$');
   final _formKey = GlobalKey<FormState>();
   late var obscureText = true;
-  late String _username, _direccion, _telefono;
+  late String _proveedor, _direccion, _telefono;
 
   TextEditingController nombre = new TextEditingController();
   TextEditingController telefono = new TextEditingController();
@@ -162,7 +162,7 @@ class _agregar_provedorState extends State<agregar_provedor> {
                   }
                   return null;
                 },
-                onSaved: (value) => _username = value!,
+                onSaved: (value) => _proveedor = value!,
                 decoration: InputDecoration(
                     hintText: 'Nombres',
                     icon: Icon(
@@ -216,7 +216,7 @@ class _agregar_provedorState extends State<agregar_provedor> {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
                         print(
-                            'Username: $_username,Direccion: $_direccion, Telefono: $_telefono');
+                            'proveedor: $_proveedor,Direccion: $_direccion, Telefono: $_telefono');
                       }
                     }),
               ),
