@@ -7,6 +7,7 @@ import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_scan.dart';
 
 
 class Pantalla_categorias extends StatefulWidget {

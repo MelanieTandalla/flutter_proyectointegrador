@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_dashboard.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_scan.dart';
 
-class Page_profile extends StatefulWidget {
-  const Page_profile({super.key});
+class Scaner extends StatefulWidget {
+  const Scaner({super.key});
 
   @override
-  State<Page_profile> createState() => _Page_profileState();
+  State<Scaner> createState() => _ScanerState();
 }
 
-class _Page_profileState extends State<Page_profile> {
+class _ScanerState extends State<Scaner> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,11 +31,13 @@ class _Page_profileState extends State<Page_profile> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    '',
+                  ),
                   Image.asset(
                     '../images/LOGO.png',
                     width: 300,
                   ),
-                  Text("")
                 ],
               ),
               decoration:
@@ -103,51 +104,6 @@ class _Page_profileState extends State<Page_profile> {
               },
             ),
           ],
-        ),
-      ),
-      body: SafeArea(
-        top: true,
-        child: SingleChildScrollView(
-          child: Padding(
-            padding:
-                EdgeInsets.only(left: 16.0, right: 16.0, top: kToolbarHeight),
-            child: Column(
-              children: <Widget>[
-                CircleAvatar(
-                  maxRadius: 80,
-                  backgroundImage: AssetImage('../images/admin.png'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'Rose Helbert',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('Nombres: '),
-                  subtitle: Text('Rose'),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('Apellidos: '),
-                  subtitle: Text('Helbert'),
-                ),
-                Divider(),              
-                ListTile(
-                  title: Text('Telefono: '),
-                  subtitle: Text('099999999'),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('Correo: '),
-                  subtitle: Text('rose@gmail.com'),
-                ),
-                Divider(),
-              ],
-            ),
-          ),
         ),
       ),
     );
