@@ -163,9 +163,17 @@ class ElevatedCardExample1 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Refrigeradora'),
+            ListTile(
+              leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/tele.png'),
+            ),
+              title: Text('Televisor plasma'),
               subtitle: Text('Semi-nueva'),
             ),
             Row(
@@ -202,9 +210,16 @@ class ElevatedCardExample2 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min, 
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Refrigeradora'),
+            ListTile(leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/celu.png'),
+            ),
+              title: Text('Celular Xiaomi'),
               
               subtitle: Text('Semi-nueva'),
             ),
@@ -242,9 +257,17 @@ class ElevatedCardExample3 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Television'),
+            ListTile(
+              leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/cargador.png'),
+            ),
+              title: Text('Cargador'),
               subtitle: Text('Semi-nueva'),
 
             ),
@@ -282,9 +305,17 @@ class ElevatedCardExample4 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Refrigeradora'),
+            ListTile(
+              leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/micro.png'),
+            ),
+              title: Text('Microondas'),
               subtitle: Text('Semi-nueva'),
             ),
             Row(
@@ -318,9 +349,17 @@ Widget build(BuildContext context) {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const ListTile(
-            leading: Icon(Icons.verified_user_outlined),
-            title: Text('Refrigeradora'),
+          ListTile(
+             leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/micro.png'),
+            ),
+            title: Text('Microondas'),
               subtitle: Text('Semi-nueva'),
           ),
           Row(
