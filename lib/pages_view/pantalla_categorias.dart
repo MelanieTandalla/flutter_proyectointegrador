@@ -3,6 +3,7 @@ import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/agregar_categoria.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_categoria.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/pantalla_entrada.dart';
+import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
@@ -112,6 +113,16 @@ class categorias extends State<Pantalla_categorias> {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Page_output()));
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.qr_code_scanner_outlined,
+              ),
+              title: Text('Scan'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => HomePage()));
               },
             ),
             ListTile(
