@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_scan.dart';
+import 'package:proyecto_integrador_flutter/pages_view/BarcodeScanPage.dart';
 
 class Page_output extends StatefulWidget {
   const Page_output({super.key});
@@ -30,21 +31,16 @@ class _Page_outputState extends State<Page_output> {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 194, 151, 151),
           title: Row(
-              children: [
-                Image.asset(
-                 '../images/LOGO.png',
-                  fit: BoxFit.contain,
-                  height: 50,
+            children: [
+              Image.asset(
+                '../images/LOGO.png',
+                fit: BoxFit.contain,
+                height: 50,
               ),
               Container(
                 width: 600,
               ),
-              Container(
-                child: Text('lola'),
-              )
-              
             ],
-
           ),
         ),
         drawer: Drawer(
@@ -123,6 +119,16 @@ class _Page_outputState extends State<Page_output> {
                 },
               ),
               ListTile(
+                leading: Icon(
+                  Icons.qr_code_scanner_outlined,
+                ),
+                title: Text('Scan'),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                },
+              ),
+              ListTile(
                 leading: Icon(Icons.call_received_sharp),
                 title: Text('Cerrar sesion'),
                 onTap: () {
@@ -172,6 +178,5 @@ class _Page_outputState extends State<Page_output> {
             ],
           ),
         ));
-        
   }
 }

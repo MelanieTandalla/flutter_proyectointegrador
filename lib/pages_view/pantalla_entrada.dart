@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
+import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_scan.dart';
+import 'package:proyecto_integrador_flutter/pages_view/BarcodeScanPage.dart';
 
 class Page_input extends StatefulWidget {
   const Page_input({super.key});
@@ -36,12 +37,12 @@ class _Page_inputState extends State<Page_input> {
                   fit: BoxFit.contain,
                   height: 50,
               ),
+              
               Container(
                 width: 600,
               ),
-              Container(
-                child: Text('lola'),
-              )
+              
+              
               
             ],
 
@@ -119,7 +120,17 @@ class _Page_inputState extends State<Page_input> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Page_output()));
               },
-            ),           
+            ),     
+            ListTile(
+              leading: Icon(
+                Icons.qr_code_scanner_outlined,
+              ),
+              title: Text('Scan'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => HomePage()));
+              },
+            ),      
             ListTile(
               leading: Icon(Icons.call_received_sharp),
               title: Text('Cerrar sesion'),

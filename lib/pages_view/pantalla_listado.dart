@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_editar/editar_producto.dart';
 import 'package:proyecto_integrador_flutter/pages_a%C3%B1adir/agregar_producto.dart';
+import 'package:proyecto_integrador_flutter/pages_view/HomePage.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_perfil.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_salida.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_scan.dart';
+import 'package:proyecto_integrador_flutter/pages_view/BarcodeScanPage.dart';
 class Pantalla_listado extends StatefulWidget {
   const Pantalla_listado({super.key});
 
@@ -32,9 +33,7 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
               Container(
                 width: 600,
               ),
-              Container(
-                child: Text('lola'),
-              )
+              
               
             ],
 
@@ -109,6 +108,16 @@ class _Pantalla_listadoState extends State<Pantalla_listado> {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Page_output()));
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.qr_code_scanner_outlined,
+              ),
+              title: Text('Scan'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => HomePage()));
               },
             ),
             ListTile(
