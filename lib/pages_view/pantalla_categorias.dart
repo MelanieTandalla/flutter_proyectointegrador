@@ -156,7 +156,7 @@ class categorias extends State<Pantalla_categorias> {
           ElevatedCardExample2(),
           ElevatedCardExample3(),
           ElevatedCardExample4(),
-          ElevatedCardExample4(),
+          ElevatedCardExample5(),
           Spacer(),
         ],
       ),
@@ -174,11 +174,19 @@ class ElevatedCardExample1 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Electrodimesticos'),
-              subtitle: Text('Lorem'),
+            ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/refri.png'),
             ),
+            title: Text('Refrigerador'),
+            subtitle: Text('Descripcion: Electrodoméstico utilizado para almacenar y conservar alimentos y bebidas a bajas temperaturas'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -213,11 +221,19 @@ class ElevatedCardExample2 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min, 
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-              title: Text('Electrodimesticos'),
-              subtitle: Text('Lorem'),
+            ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/pilas.png'),
             ),
+            title: Text('Pilas'),
+            subtitle: Text('Descripcion: Dispositivos electroquímicos que almacenan energía química y la convierten en energía eléctrica cuando se conectan a un circuito'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -252,12 +268,19 @@ class ElevatedCardExample3 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-               title: Text('Electrodimesticos'),
-              subtitle: Text('Lorem'),
-
+            ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/freidora.png'),
             ),
+            title: Text('Freidora de Aire'),
+            subtitle: Text('Descripcion: Electrodoméstico que permite cocinar alimentos con una mínima cantidad de aceite o incluso sin aceite.'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -292,11 +315,19 @@ class ElevatedCardExample4 extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.verified_user_outlined),
-               title: Text('Electrodimesticos'),
-              subtitle: Text('Lorem'),
+           ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/tv.png'),
             ),
+            title: Text('Televisor'),
+            subtitle: Text('Descripcion: Dispositivo electrónico que se utiliza para recibir señales de televisión y mostrar imágenes y sonido en una pantalla'),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -321,22 +352,34 @@ class ElevatedCardExample4 extends StatelessWidget {
   }
 }
 
-@override
-Widget build(BuildContext context) {
-  return Center(
-    child: Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const ListTile(
-            leading: Icon(Icons.verified_user_outlined),
-             title: Text('Electrodimesticos'),
-              subtitle: Text('Lorem'),
+
+class ElevatedCardExample5 extends StatelessWidget {
+  const ElevatedCardExample5({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+           ListTile(
+            leading: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 100,
+                minHeight: 260,
+                maxWidth: 104,
+                maxHeight: 264,
+              ),
+              child: Image.asset('../images/cell.png'),
+            ),
+            title: Text('Telefono'),
+            subtitle: Text('Descripcion: Teléfono móvil o smartphone, es un dispositivo electrónico portátil que se utiliza para realizar llamadas telefónicas, enviar mensajes de texto y multimedia'),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              TextButton(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
                   child: const Text('Editar'),
                   onPressed: () {
                     Navigator.push(
@@ -344,16 +387,17 @@ Widget build(BuildContext context) {
                         MaterialPageRoute(
                             builder: (context) => Editar_categoria()));
                   },),
-              const SizedBox(width: 8),
-              Container(
+                const SizedBox(width: 8),
+                Container(
                   child: const Dialog(),
                 )
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 

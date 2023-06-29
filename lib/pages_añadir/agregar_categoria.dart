@@ -161,39 +161,20 @@ class _Agregar_categoriaState extends State<Agregar_categoria> {
                 keyboardType: TextInputType.name,
                 validator: (value) {
                   if ((value ?? '').isEmpty) {
-                    return 'Nombre del producto';
+                    return 'Nombre de la Categoria';
                   }
                   return null;
                 },
                 onSaved: (value) => _username = value!,
                 decoration: InputDecoration(
-                    hintText: 'Ingrese el nombre del producto',
+                    hintText: 'Ingrese el nombre de la Categoria',
                     icon: Icon(
                       Icons.person,
                       color: Colors.black,
                     )),
               ),
               //Text('$selectedValue2'),
-              
-              
-              TextFormField(
-                controller: precio,
-                maxLength: 4,
-                validator: (value) {
-                  if ((value ?? '').isEmpty) {
-                    return 'Ingres el precio del producto';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _precio = value!,
-                decoration: InputDecoration(
-                    hintText: 'Ingrese el precio', icon: Icon(Icons.numbers)),
-              ),
-
-
-
-
-              
+                            
               TextFormField(
                 controller: descripcion,
                 maxLength: 25,
@@ -205,38 +186,7 @@ class _Agregar_categoriaState extends State<Agregar_categoria> {
                 },
                 onSaved: (value) => _descripcion = value!,
                 decoration: InputDecoration(
-                    hintText: 'Ingrese la descripcion del producto', icon: Icon(Icons.description)),
-              ),
-
-
-              
-              TextFormField(
-                controller: cantidad,
-                maxLength: 4,
-                validator: (value) {
-                  if ((value ?? '').isEmpty) {
-                    return 'Ingres la cantidad';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _cantidad = value!,
-                decoration: InputDecoration(
-                    hintText: 'Ingrese la cantidad del producto', icon: Icon(Icons.numbers)),
-              ),
-
-
-TextFormField(
-                controller: categoria,
-                
-                validator: (value) {
-                  if ((value ?? '').isEmpty) {
-                    return 'Categoria que pertenece';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _categoria = value!,
-                decoration: InputDecoration(
-                    hintText: 'Ingrese la categeria', icon: Icon(Icons.numbers)),
+                    hintText: 'Ingrese la descripcion de la Categoria', icon: Icon(Icons.description)),
               ),
 
 TextFormField(
@@ -244,13 +194,13 @@ TextFormField(
                 
                 validator: (value) {
                   if ((value ?? '').isEmpty) {
-                    return 'Ingres la imagen';
+                    return 'Ingrese la imagen';
                   }
                   return null;
                 },
                 onSaved: (value) => _imagen = value!,
                 decoration: InputDecoration(
-                    hintText: 'Ingrese la imagen del producto', icon: Icon(Icons.imagesearch_roller)),
+                    hintText: 'Ingrese la imagen de la Categoria', icon: Icon(Icons.imagesearch_roller)),
               ),
 
 

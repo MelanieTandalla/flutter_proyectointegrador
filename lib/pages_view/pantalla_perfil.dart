@@ -145,21 +145,25 @@ class _Page_profileState extends State<Page_profile> {
                 ),
                 Divider(),
                 ListTile(
+                  leading: Icon(Icons.person),
                   title: Text('Nombres: '),
                   subtitle: Text('Rose'),
                 ),
                 Divider(),
                 ListTile(
-                  title: Text('Apellidos: '),
+                  leading: Icon(Icons.home),
+                  title: Text('Direccion: Centro'),
                   subtitle: Text('Helbert'),
                 ),
                 Divider(),              
                 ListTile(
+                  leading: Icon(Icons.phone),
                   title: Text('Telefono: '),
                   subtitle: Text('099999999'),
                 ),
                 Divider(),
                 ListTile(
+                  leading: Icon(Icons.email),
                   title: Text('Correo: '),
                   subtitle: Text('rose@gmail.com'),
                 ),
