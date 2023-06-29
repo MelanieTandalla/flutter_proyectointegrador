@@ -136,7 +136,7 @@ class _Page_profileState extends State<Page_profile> {
                 Divider(),
                 ListTile(
                   title: Text('Telefono: '),
-                  subtitle: Text('0999999999'),
+                  subtitle: Text('099999999'),
                 ),
                 Divider(),
                 ListTile(
