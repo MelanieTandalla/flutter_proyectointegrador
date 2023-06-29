@@ -24,7 +24,7 @@ class StartState extends State<Pantalla_Inicio> {
   }
 
   startTime() async {
-    var duration = Duration(seconds: 1);
+    var duration = Duration(seconds:1);
     return new Timer(duration, route);
     
   }
@@ -57,8 +57,12 @@ class StartState extends State<Pantalla_Inicio> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text('"BIENVENIDOS"',style: TextStyle(
+                  fontSize: 50,
+                  color: Color.fromRGBO(166, 88, 49, 0.98)
+                ),),
                 Image.asset('../images/LOGO.png'),
-                Text("BIENVENIDOS PRODUCT INVENTORY",style: TextStyle(fontSize: 50,),)
+                
               
               ]
             ),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 
 import 'package:proyecto_integrador_flutter/auth/pantalla_registro.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
+import 'package:proyecto_integrador_flutter/pages_view/pantalla_dashboard.dart';
 
 class Pantalla_login extends StatefulWidget {
   const Pantalla_login({super.key});
@@ -38,10 +38,9 @@ class login extends State<Pantalla_login> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset('../images/LOGO.png'),
-              
               TextField(
                 controller: email,
-                decoration: InputDecoration(hintText: 'correo',  icon:Icon(Icons.email)),
+                decoration: InputDecoration(hintText: 'Correo',  icon:Icon(Icons.email)),
               ),
               SizedBox(
                 height: 50,
@@ -49,7 +48,7 @@ class login extends State<Pantalla_login> {
               TextField(
                 controller: password,
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'contraseña', icon:Icon(Icons.password)),
+                decoration: InputDecoration(hintText: 'Contraseña', icon:Icon(Icons.password)),
               ),
               Container(
                 margin: EdgeInsets.only(top: 30),
@@ -69,7 +68,7 @@ class login extends State<Pantalla_login> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Pantalla_listado()));
+                              builder: (context) => pantalla_menu()));
                     }),
               ),
               SizedBox(
