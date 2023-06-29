@@ -31,7 +31,24 @@ class productos extends State<Editar_categoria> {
       backgroundColor: Color.fromRGBO(250, 240, 236, 0.969),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 194, 151, 151),
-      ),
+          title: Row(
+              children: [
+                Image.asset(
+                 '../images/LOGO.png',
+                  fit: BoxFit.contain,
+                  height: 50,
+              ),
+              Container(
+                width: 600,
+              ),
+              Container(
+                child: Text('lola'),
+              )
+              
+            ],
+
+          ),
+  ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,

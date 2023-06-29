@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_integrador_flutter/auth/pantalla_login.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_categorias.dart';
-import 'package:proyecto_integrador_flutter/pages_view/pantalla_dashboard.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_entrada.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_listado.dart';
 import 'package:proyecto_integrador_flutter/pages_view/pantalla_proveedores.dart';
@@ -22,7 +21,24 @@ class _Page_profileState extends State<Page_profile> {
       backgroundColor: Color.fromRGBO(250, 240, 236, 0.969),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 194, 151, 151),
-      ),
+          title: Row(
+              children: [
+                Image.asset(
+                 '../images/LOGO.png',
+                  fit: BoxFit.contain,
+                  height: 50,
+              ),
+              Container(
+                width: 600,
+              ),
+              Container(
+                child: Text('lola'),
+              )
+              
+            ],
+
+          ),
+  ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
